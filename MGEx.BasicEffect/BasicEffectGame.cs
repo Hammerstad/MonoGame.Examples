@@ -82,9 +82,9 @@ namespace MGEx.BasicEffectIntro
         private void DrawText()
         {
             spriteBatch.Begin();
-            var effectName = currentBasicEffect == basicEffect ? "basic effect" : "example effect";
+            var effectName = currentBasicEffect == basicEffect ? "vertex colors enabled" : "vertex colors and lighting enabled";
             spriteBatch.DrawString(font, $"Press '1' to change effect." , new Vector2(50, 30), Color.Black);
-            spriteBatch.DrawString(font, $"Currently using effect: {effectName}" , new Vector2(50, 50), Color.Black);
+            spriteBatch.DrawString(font, $"Currently using basic effect with {effectName}" , new Vector2(50, 50), Color.Black);
             spriteBatch.End();
 
             // Reset defaults after spritebatch is done
