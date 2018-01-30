@@ -1,26 +1,24 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace MGEx.Common
 {
     public class StaticCamera : ICamera
     {
+
+        public StaticCamera() : this(new Vector3(5,5,5))
+        {
+
+        }
+
+        public StaticCamera(Vector3 cameraPosition)
+        {
+            World = Matrix.CreateTranslation(new Vector3(0, 0, 0));
+            View = Matrix.CreateLookAt(cameraPosition, Vector3.Zero, Vector3.Up);
+            Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), 800f / 480f, 0.1f, 1000f);
+        }
+
         public Matrix World { get; }
         public Matrix View { get; }
         public Matrix Projection { get; }
-
-        public StaticCamera(GraphicsDevice graphicsDevice)
-        {
-            float tilt = MathHelper.ToRadians(0);  // 0 degree angle
-                                                   // Use the world matrix to tilt the cube along x and y axes.
-            World = Matrix.CreateRotationX(tilt) * Matrix.CreateRotationY(tilt);
-            View = Matrix.CreateLookAt(new Vector3(5, 5, 5), Vector3.Zero, Vector3.Up);
-
-            Projection = Matrix.CreatePerspectiveFieldOfView(
-                MathHelper.ToRadians(45),  // 45 degree angle
-                (float)graphicsDevice.Viewport.Width /
-                (float)graphicsDevice.Viewport.Height,
-                1.0f, 100.0f);
-        }
     }
 }

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MGEx.BasicEffectIntro", "MG
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MGEx.Common", "MGEx.Common\MGEx.Common.csproj", "{F435E2B9-A6EE-4B4D-B3CE-0BF658F7413F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MGEx.BasicModel", "MGEx.BasicModel\MGEx.BasicModel.csproj", "{2FBBBDC1-2139-4E8F-9A8A-B9912557E11B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F435E2B9-A6EE-4B4D-B3CE-0BF658F7413F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F435E2B9-A6EE-4B4D-B3CE-0BF658F7413F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F435E2B9-A6EE-4B4D-B3CE-0BF658F7413F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FBBBDC1-2139-4E8F-9A8A-B9912557E11B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FBBBDC1-2139-4E8F-9A8A-B9912557E11B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FBBBDC1-2139-4E8F-9A8A-B9912557E11B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FBBBDC1-2139-4E8F-9A8A-B9912557E11B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,13 +9,13 @@ namespace MGEx.BasicEffectIntro
     public class BasicEffectGame : Game
     {
         private readonly GraphicsDeviceManager graphics;
+        private readonly ICamera camera;
 
         private BasicEffect exampleEffect;
         private BasicEffect basicEffect;
         private BasicEffect currentBasicEffect;
 
         private Cube orangeCube;
-        private ICamera camera;
         private SpriteBatch spriteBatch;
         private KeyboardState previousKeyboardState;
         private SpriteFont font;
@@ -24,11 +24,11 @@ namespace MGEx.BasicEffectIntro
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            camera = new StaticCamera();
         }
 
         protected override void Initialize()
         {
-            camera = new StaticCamera(graphics.GraphicsDevice);
             exampleEffect = new ExampleEffect(graphics.GraphicsDevice)
             {
                 World = camera.World,
