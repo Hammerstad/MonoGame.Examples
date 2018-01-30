@@ -3,13 +3,13 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace MGEx.Common
 {
-    public class Camera
+    public class StaticCamera : ICamera
     {
         public Matrix World { get; }
         public Matrix View { get; }
         public Matrix Projection { get; }
 
-        public Camera(GraphicsDevice graphicsDevice)
+        public StaticCamera(GraphicsDevice graphicsDevice)
         {
             float tilt = MathHelper.ToRadians(0);  // 0 degree angle
                                                    // Use the world matrix to tilt the cube along x and y axes.

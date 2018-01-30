@@ -14,8 +14,8 @@ namespace MGEx.BasicEffectIntro
         private BasicEffect basicEffect;
         private BasicEffect currentBasicEffect;
 
-        private OrangeCube orangeCube;
-        private Camera camera;
+        private Cube orangeCube;
+        private ICamera camera;
         private SpriteBatch spriteBatch;
         private KeyboardState previousKeyboardState;
         private SpriteFont font;
@@ -28,7 +28,7 @@ namespace MGEx.BasicEffectIntro
 
         protected override void Initialize()
         {
-            camera = new Camera(graphics.GraphicsDevice);
+            camera = new StaticCamera(graphics.GraphicsDevice);
             exampleEffect = new ExampleEffect(graphics.GraphicsDevice)
             {
                 World = camera.World,
@@ -49,7 +49,7 @@ namespace MGEx.BasicEffectIntro
 
         protected override void LoadContent()
         {
-            orangeCube = new OrangeCube(GraphicsDevice);
+            orangeCube = new Cube(GraphicsDevice, Color.Orange);
             spriteBatch = new SpriteBatch(GraphicsDevice);
             previousKeyboardState = Keyboard.GetState();
             font = Content.Load<SpriteFont>("Courier New");

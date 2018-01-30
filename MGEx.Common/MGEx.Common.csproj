@@ -43,8 +43,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Camera.cs" />
-    <Compile Include="OrangeCube.cs" />
+    <Compile Include="StaticCamera.cs" />
+    <Compile Include="Cube.cs" />
+    <Compile Include="ICamera.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VertexPositionColorNormal.cs" />
   </ItemGroup>

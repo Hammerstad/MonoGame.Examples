@@ -1,24 +1,25 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Linq;
 
 namespace MGEx.Common
 {
-    public class OrangeCube
+    public class Cube
     {
         private const float Radius = 10.0f;
 
-        private static readonly VertexPositionColorNormal[] vertices =
+        private static readonly Vector3[] vertexPositions =
         {
             // Front
-            new VertexPositionColorNormal(new Vector3(-Radius, -Radius, Radius), Color.Orange),
-            new VertexPositionColorNormal(new Vector3(Radius, -Radius, Radius), Color.Orange),
-            new VertexPositionColorNormal(new Vector3(Radius, Radius, Radius), Color.Orange),
-            new VertexPositionColorNormal(new Vector3(-Radius, Radius, Radius), Color.Orange), 
+            new Vector3(-Radius, -Radius, Radius),
+            new Vector3(Radius, -Radius, Radius),
+            new Vector3(Radius, Radius, Radius),
+            new Vector3(-Radius, Radius, Radius), 
             // Back
-            new VertexPositionColorNormal(new Vector3(-Radius, -Radius, -Radius), Color.Orange),
-            new VertexPositionColorNormal(new Vector3(Radius, -Radius, -Radius), Color.Orange),
-            new VertexPositionColorNormal(new Vector3(Radius, Radius, -Radius), Color.Orange),
-            new VertexPositionColorNormal(new Vector3(-Radius, Radius, -Radius), Color.Orange),
+            new Vector3(-Radius, -Radius, -Radius),
+            new Vector3(Radius, -Radius, -Radius),
+            new Vector3(Radius, Radius, -Radius),
+            new Vector3(-Radius, Radius, -Radius),
         };
         private static readonly short[] indices =
         {
@@ -49,8 +50,15 @@ namespace MGEx.Common
 
         private float angle = 0.0f;
 
-        public OrangeCube(GraphicsDevice graphicsDevice)
+        public Cube(GraphicsDevice graphicsDevice) : this(graphicsDevice, Color.White)
         {
+        }
+
+        public Cube(GraphicsDevice graphicsDevice, Color color)
+        {
+            VertexPositionColorNormal[] vertices = vertexPositions
+                .Select(position => new VertexPositionColorNormal(position, color))
+                .ToArray();
             VertexPositionColorNormal.CalculateNormals(vertices, indices);
 
             vertexBuffer = new VertexBuffer(graphicsDevice, VertexPositionColorNormal.VertexDeclaration, vertices.Length, BufferUsage.WriteOnly);

@@ -9,6 +9,10 @@ namespace MGEx.Common
         public Color Color;
         public Vector3 Normal;
 
+        public VertexPositionColorNormal(Vector3 position) : this(position, Color.White)
+        {
+        }
+
         public VertexPositionColorNormal(Vector3 position, Color color) : this(position, color, new Vector3())
         {
         }
